@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "Name": "Gitesh Kumar",
+      "email": "gitesh@motorola.biz",
+      "dob": "2000-10-10",
+      "avatar": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "country": "IN",
+      "id": 1
+    },
+    {
+      "Name": "Abhijit Jawale",
+      "email": "abhijit.jawale@waiin.com",
+      "dob": "1996-12-02",
+      "avatar": "https://media-exp1.licdn.com/dms/image/D5603AQF75V8tctzqlg/profile-displayphoto-shrink_100_100/0/1631852542182?e=1646265600&v=beta&t=XW9XtNO-QCTVL0rJZ1AKwXdtca2w-xrb6aZh1zwCp4I",
+      "country": "India",
+      "id": 2
+    },
+    {
+      "Name": "Swamiraj Anarase",
+      "email": "swamiraj.anarase@waiin.com",
+      "dob": "1998-12-11",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C5603AQGyBT__dhGH3A/profile-displayphoto-shrink_200_200/0/1591683667610?e=1646870400&v=beta&t=Nzu8IQy24Jlg5yqM_wgzfNjw2e2P5mkqo9XzDd_HcVI",
+      "country": "India",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

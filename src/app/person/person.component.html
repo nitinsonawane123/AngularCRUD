@@ -1,0 +1,79 @@
+<nav class="navbar navbar-light bg-info">
+    <div class="container-fluid">
+        <h1 style="color:aliceblue;">Angular CRUD</h1>
+        <div class="d-flex">
+            <button (click)="clickAddPerson()" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success">Add Person</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+  <div class="col-md-4 mt-5 float-left" *ngFor="let row of personData">
+    <div class="card" style="width: 20rem;">
+    <img class="card-img-top p-4" src="{{row.avatar}}" alt="card-img-cop">
+    <div class="card-body">
+      <h5 class="card-title"><a href="#" class="text-dark" (click)="onEdit(row)"  type="button" data-toggle="modal" data-target="#exampleModal">{{row.Name}}</a></h5>
+      <p class="card-text"><b>Email:</b> {{row.email}} <br>
+      <span><b>Age:</b> {{row.dob | Age}} </span> <br>
+        <span><b>Country:</b> {{row.country}}</span></p>
+      <button (click)="onEdit(row)" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-info">Edit</button>
+                <button (click)="deletePerson(row)" class="btn btn-danger mx-3">Delete</button>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Person Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="form-group">
+                  <label for="exampleInputEmail1"><b>Name</b></label>
+                  <input type="text" class="form-control" formControlName="Name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>Email ID</b></label>
+                    <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email ID">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>DOB</b></label>
+                    <input type="date" class="form-control" formControlName="dob" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter DOB">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>Avatar</b></label>
+                    <input type="text" class="form-control" formControlName="avatar" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Avatar">
+                </div>
+
+                <div class="form-group">
+                    <label class="exampleFormControlSelect1 textcolor"><b>Country</b></label>
+                    <select class="form-control" id="exampleFormControlSelect1" formControlName="country">
+                            <option>India</option>
+                            <option>USA</option>
+                            <option>Japan</option>
+                            <option>IN</option>
+                    </select>
+                </div>
+
+    
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" (click)="postPersonDetails()" class="btn btn-primary">Add Person Details</button>
+          <button type="button" *ngIf="showUpdate" (click)="updatePersonDetails()" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
